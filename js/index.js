@@ -6,6 +6,7 @@ function getCurrentLocation(){
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(function(position) {
         getCurrentWeather(position.coords.latitude, position.coords.longitude, currentUnit);
+
     });
   } else {
     console.log("Cannot determine location");
@@ -15,20 +16,26 @@ function getCurrentLocation(){
 //call the weather api and set result object
 function getCurrentWeather(latitude, longitude, unit) {
   var url = "http://api.openweathermap.org/data/2.5/weather?lat=" + latitude + "&lon=" + longitude + "&units=" + unit + "&APPID=8f95f93fa04e5c5c00197fc5679d2604";
+ 
 
   $.getJSON({
     url: url,
     success: function(data) {
       //on success
       updatePage(weatherFormatter(data, unit));
+      $("#loader").fadeOut(1000, function(){
+        $("#weatherBox").fadeIn(1000);
+        $("#buttons").fadeIn(2000);
+      });
+      
     },
     error: function() {
       //on error
       console.log("Cannot get data");
-      
     }
   });
 }
+
 
 //returns needed weather data as basic object
 function weatherFormatter(weather, unit) {
@@ -100,29 +107,17 @@ function setIcon(condition){
 }
 
 $(document).ready(function() {
+  $("#weatherBox, #buttons").hide();
+  $("#loader").show;
   getCurrentLocation();
 });
 
-$(document).ajaxStart(function() {
-  $("#weatherBox").hide();
-  $("#buttons").hide();
-  $("#loading").show();
-});
-
-$(document).ajaxStop(function() {
-  $("#loading").hide();
-  $("#weatherBox").show();
-  $("#buttons").show();
-});
-
 $("#imperial").click(function(){
-  console.log("imperial clicked");
   currentUnit = "imperial";
   getCurrentLocation();
 });
 
 $("#metric").click(function(){
-  console.log("metric clicked");
   currentUnit = "metric";
   getCurrentLocation();
 });

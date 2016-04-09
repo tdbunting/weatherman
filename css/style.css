@@ -17,6 +17,7 @@ body{
   background-color: #D4C6C6;
   border-radius: 8px; 
   box-shadow: 0 1px 5px #091414;
+  display: none;
 }
 
 .btn-group{
@@ -44,6 +45,167 @@ body{
   font-size: 10rem;
   color: #9E1616;
 }
+
+footer p{
+  margin-top: 100px;
+  color: #D4C6C6;
+}
+
+/* LOADER 
+   Designed by elhombretecla http://codepen.io/elhombretecla/
+*/
+
+#loader{
+  margin-top: 60px;
+}
+
+.mini-loader-content {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+svg#mini-loader {
+  height: 100px;
+  width: 1000px;
+}
+
+#b0 {
+  animation: b0 4s infinite ease;
+  transform-origin: 250px 250px;
+  fill: #37767A;
+}
+
+#b1 {
+  animation: b1 4s infinite ease;
+  fill: #D4C6C6;
+}
+
+#b2 {
+  animation: b2 4s infinite ease;
+  fill: #D4C6C6;
+}
+
+#b3 {
+  animation: b3 4s infinite ease;
+  fill: #D4C6C6;
+}
+
+#b4 {
+  animation: b4 4s infinite ease;
+  fill: #D4C6C6;
+}
+
+@keyframes b0 {
+  0% {
+    transform: rotate(0);
+  }
+  
+  25% {
+    transform: rotate(-90deg);
+  }
+  
+  50% {
+    transform: rotate(-180deg);
+  }
+  
+  75% {
+    transform: rotate(-270deg);
+  }
+  
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes b1 {
+  0% {
+    transform: translate(0, 0);
+  }
+  
+  25% {
+    transform: translate(0, 355px);
+  }
+  
+  50% {
+    transform: translate(355px, 355px);
+  }
+  
+  75% {
+    transform: translate(355px, 0);
+  }
+  
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes b2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  
+  25% {
+    transform: translate(-355px, 0);
+  }
+  
+  50% {
+    transform: translate(-355px, 355px);
+  }
+  
+  75% {
+    transform: translate(0, 355px);
+  }
+  
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes b3 {
+  0% {
+    transform: translate(0, 0);
+  }
+  
+  25% {
+    transform: translate(0, -355px);
+  }
+  
+  50% {
+    transform: translate(-355px, -355px);
+  }
+  
+  75% {
+    transform: translate(-355px, 0);
+  }
+  
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes b4 {
+  0% {
+    transform: translate(0, 0);
+  }
+  
+  25% {
+    transform: translate(355px, 0);
+  }
+  
+  50% {
+    transform: translate(355px, -355px);
+  }
+  
+  75% {
+    transform: translate(0, -355px);
+  }
+  
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
 
 /* Media Query */
 
