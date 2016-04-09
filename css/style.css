@@ -1,0 +1,54 @@
+body{
+  font-family: 'Lato', sans-serif; 
+  color: #091414;
+  background-color: #254F51;
+}
+
+.header{
+  color: #D4C6C6;
+  padding: 50px 40px; 
+}
+.header h1{
+  font-size: 45px;
+}
+
+#weatherBox{
+  padding: 25px 50px;
+  background-color: #D4C6C6;
+  border-radius: 8px; 
+  box-shadow: 0 1px 5px #091414;
+}
+
+.btn-group{
+  margin-top: 25px;
+}
+.btn-temp{
+  background-color: #254F51;
+  border-color: #37767A;
+  color: #D4C6C6;
+}
+
+.btn-temp:hover{
+  background-color: #37767A;
+  border-color: #254F51;
+  color: #FFF;
+}
+
+.btn-temp.active{
+  background-color: #37767A;
+  border-color: #254F51;
+  color: #FFF;
+}
+
+#icon{
+  font-size: 10rem;
+  color: #9E1616;
+}
+
+/* Media Query */
+
+@media (min-width: 768px) { 
+  .header h1{
+    font-size: 60px;
+  }
+}
